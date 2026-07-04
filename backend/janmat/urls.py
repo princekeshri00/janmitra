@@ -7,7 +7,11 @@ urlpatterns = [
         admin.site.urls,
     ),
     path(
+        "api/v1/auth/",
+        include("accounts.urls"),
+    ),
+    path(
         "api/v1/problems/",
         include("problems.urls"),
-    )
+    ),
 ]
