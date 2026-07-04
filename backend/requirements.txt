@@ -1,8 +1,8 @@
-django>=4
-djangorestframework>=3.16
-django-cors-headers>=4.7
-python-dotenv>=1.1
-psycopg[binary]>=3.2
-dj-database-url>=3.0
-firebase-admin>=6.8
-cloudinary>=1.44
+Django>=5.2,<6.0
+djangorestframework>=3.16,<4.0
+django-cors-headers>=4.7,<5.0
+python-dotenv>=1.1,<2.0
+psycopg[binary]>=3.2,<4.0
+dj-database-url>=3.0,<4.0
+firebase-admin>=6.8,<8.0
+cloudinary>=1.44,<2.0
