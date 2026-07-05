@@ -120,7 +120,10 @@ def submit_problem(problem):
             "Problem description cannot be empty."
         )
 
-    problem.status = ProblemStatus.SUBMITTED
+    problem.status = (
+        ProblemStatus.READY_FOR_AI
+    )
+
     problem.submitted_at = timezone.now()
 
     problem.save(

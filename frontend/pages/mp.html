@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MP Dashboard | JanMitra</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+
+    <link rel="stylesheet" href="../css/mp.css">
+</head>
+
+<body>
+
+    <header class="mp-header">
+
+        <div class="container mp-header-content">
+
+            <a href="./mp.html" class="dashboard-brand">
+                <span class="dashboard-brand-mark">
+                    JM
+                </span>
+
+                <span>
+                    JanMitra
+                </span>
+            </a>
+
+
+            <div class="mp-header-actions">
+
+                <div class="mp-user">
+
+                    <span>
+                        MP Development Portal
+                    </span>
+
+                    <small>
+                        DECISION AUTHORITY
+                    </small>
+
+                </div>
+
+                <button id="logoutButton" class="secondary-button" type="button">
+                    Sign Out
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="mp-hero">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    DEVELOPMENT INTELLIGENCE
+                </p>
+
+                <h1>
+                    Priority works.
+                    <br>
+                    Ready for decision.
+                </h1>
+
+                <p>
+                    Citizen development requests have been
+                    consolidated, ranked, and converted into
+                    actionable proposals.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="mp-content">
+
+            <div class="container">
+
+                <div class="mp-summary">
+
+                    <article>
+
+                        <span>
+                            Pending Review
+                        </span>
+
+                        <strong id="pendingCount">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            Approved
+                        </span>
+
+                        <strong id="approvedCount">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            Citizen Requests
+                        </span>
+
+                        <strong id="requestCount">
+                            0
+                        </strong>
+
+                    </article>
+
+                </div>
+
+
+                <div class="proposal-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            PRIORITIZED LIST
+                        </p>
+
+                        <h2>
+                            Development proposals
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Ranked by citizen demand and
+                        development impact.
+                    </p>
+
+                </div>
+
+
+                <div id="proposalList" class="proposal-list"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="proposalModal" class="proposal-modal-backdrop hidden">
+
+        <section class="proposal-modal">
+
+            <div class="proposal-modal-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        DEVELOPMENT PROPOSAL
+                    </p>
+
+                    <h2 id="modalProposalTitle">
+                        Proposal
+                    </h2>
+
+                </div>
+
+                <button id="closeProposalButton" class="proposal-close" type="button">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div id="proposalDetail"></div>
+
+
+            <div id="proposalActions" class="proposal-actions">
+
+                <button id="editApproveButton" class="secondary-button" type="button">
+                    Edit & Approve
+                </button>
+
+                <button id="approveButton" class="primary-button" type="button">
+                    Approve Proposal
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <div id="editModal" class="proposal-modal-backdrop hidden">
+
+        <section class="proposal-modal edit-modal">
+
+            <div class="proposal-modal-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        MP REVISION
+                    </p>
+
+                    <h2>
+                        Edit proposal
+                    </h2>
+
+                </div>
+
+                <button id="closeEditButton" class="proposal-close" type="button">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="editProposalForm">
+
+                <label for="editSolution">
+                    Final development solution
+                </label>
+
+                <textarea id="editSolution" rows="7" required></textarea>
+
+
+                <label for="editBudget">
+                    Final proposed budget
+                </label>
+
+                <input id="editBudget" type="number" min="0" required>
+
+
+                <div class="proposal-actions">
+
+                    <button id="cancelEditButton" class="secondary-button" type="button">
+                        Cancel
+                    </button>
+
+                    <button class="primary-button" type="submit">
+                        Save & Approve
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <script type="module" src="../js/mp.js"></script>
+
+</body>
+
+</html>

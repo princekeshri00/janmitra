@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Citizen Dashboard | JanMitra</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+
+    <link rel="stylesheet" href="../css/client.css">
+</head>
+
+<body>
+
+    <div id="pageLoader" class="page-loader">
+        Loading JanMitra...
+    </div>
+
+
+    <div id="clientApp" class="hidden">
+
+        <header class="dashboard-header">
+
+            <div class="container header-content">
+
+                <a href="./client.html" class="dashboard-brand">
+                    <span class="dashboard-brand-mark">
+                        JM
+                    </span>
+
+                    <span>
+                        JanMitra
+                    </span>
+                </a>
+
+
+                <div class="header-actions">
+
+                    <a href="./public.html" class="public-nav-link">
+                        Public Works
+                    </a>
+
+                    <div class="user-summary">
+
+                        <span id="userEmail">
+                            Citizen
+                        </span>
+
+                        <span class="role-label">
+                            CLIENT
+                        </span>
+
+                    </div>
+
+                    <button id="logoutButton" class="secondary-button" type="button">
+                        Sign Out
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <main>
+
+            <section class="dashboard-hero">
+
+                <div class="container hero-content">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            CITIZEN DEVELOPMENT PORTAL
+                        </p>
+
+                        <h1>
+                            Your voice.
+                            <br>
+                            Your neighbourhood.
+                        </h1>
+
+                        <p class="hero-description">
+                            Raise local development needs and
+                            track how they move through the
+                            public decision pipeline.
+                        </p>
+
+                    </div>
+
+
+                    <button id="openComplaintButton" class="primary-button hero-button" type="button">
+                        + Raise a Development Request
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <section class="dashboard-content">
+
+                <div class="container">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                MY REQUESTS
+                            </p>
+
+                            <h2>
+                                Development requests
+                            </h2>
+
+                        </div>
+
+                        <span id="problemCount" class="request-count">
+                            0 requests
+                        </span>
+
+                    </div>
+
+
+                    <div id="problemList" class="problem-list"></div>
+
+
+                    <div id="problemEmptyState" class="empty-state hidden">
+
+                        <h3>
+                            No development requests yet
+                        </h3>
+
+                        <p>
+                            Raise your first local issue and
+                            track its progress here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <div id="complaintModal" class="modal-backdrop hidden">
+
+        <section class="complaint-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        NEW REQUEST
+                    </p>
+
+                    <h2>
+                        Raise a development issue
+                    </h2>
+
+                </div>
+
+                <button id="closeComplaintButton" class="modal-close" type="button" aria-label="Close">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="complaintForm">
+
+                <div class="form-group">
+
+                    <label for="problemTitle">
+                        Issue title
+                    </label>
+
+                    <input id="problemTitle" type="text" maxlength="250" placeholder="Example: Water supply disruption"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="problemDescription">
+                        Describe the development need
+                    </label>
+
+                    <textarea id="problemDescription" rows="6"
+                        placeholder="Tell us what is happening, who is affected, and for how long..."
+                        required></textarea>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="problemLanguage">
+                            Language
+                        </label>
+
+                        <select id="problemLanguage" required>
+                            <option value="en">
+                                English
+                            </option>
+
+                            <option value="hi">
+                                Hindi
+                            </option>
+
+                            <option value="te">
+                                Telugu
+                            </option>
+
+                            <option value="bn">
+                                Bengali
+                            </option>
+
+                            <option value="ta">
+                                Tamil
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="problemLocality">
+                            Locality
+                        </label>
+
+                        <input id="problemLocality" type="text" maxlength="200" placeholder="Locality / Colony">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="problemWard">
+                            Ward
+                        </label>
+
+                        <input id="problemWard" type="text" maxlength="100" placeholder="Ward number or name">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="problemDistrict">
+                            District
+                        </label>
+
+                        <input id="problemDistrict" type="text" maxlength="100" placeholder="District">
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="problemState">
+                            State
+                        </label>
+
+                        <input id="problemState" type="text" maxlength="100" placeholder="State">
+
+                    </div>
+
+                </div>
+
+
+                <p id="complaintError" class="form-error"></p>
+
+
+                <div class="modal-actions">
+
+                    <button id="cancelComplaintButton" type="button" class="secondary-button">
+                        Cancel
+                    </button>
+
+                    <button id="saveDraftButton" type="button" class="secondary-button">
+                        Save Draft
+                    </button>
+
+                    <button id="submitComplaintButton" type="submit" class="primary-button">
+                        Submit Request
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <div id="problemModal" class="modal-backdrop hidden">
+
+        <section class="problem-detail-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        REQUEST DETAILS
+                    </p>
+
+                    <h2 id="detailTitle">
+                        Development request
+                    </h2>
+
+                </div>
+
+                <button id="closeProblemButton" class="modal-close" type="button" aria-label="Close">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div id="problemDetailContent"></div>
+
+        </section>
+
+    </div>
+
+
+    <script type="module" src="../js/client.js"></script>
+
+</body>
+
+</html>

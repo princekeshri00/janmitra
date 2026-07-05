@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="JanMitra public development projects and approved proposals.">
+
+    <title>
+        JanMitra | Public Development
+    </title>
+
+    <link rel="stylesheet" href="../css/global.css">
+
+    <link rel="stylesheet" href="../css/public.css">
+</head>
+
+
+<body>
+
+    <header class="public-header">
+
+        <div class="public-header-inner">
+
+            <a class="brand" href="../index.html">
+                <span class="brand-mark">
+                    J
+                </span>
+
+                <div>
+                    <strong>
+                        JanMitra
+                    </strong>
+
+                    <span>
+                        Public Development
+                    </span>
+                </div>
+            </a>
+
+
+            <nav class="public-nav">
+
+                <a class="nav-link active" href="./public.html">
+                    Development Projects
+                </a>
+
+                <a class="primary-button" href="../index.html">
+                    Citizen Login
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="public-hero">
+
+            <div class="public-hero-content">
+
+                <span class="eyebrow">
+                    Transparent Public Development
+                </span>
+
+                <h1>
+                    See what your public requests
+                    are becoming.
+                </h1>
+
+                <p>
+                    Explore approved development proposals,
+                    public priorities, planned solutions,
+                    and allocated budgets.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="public-summary">
+
+            <div class="summary-grid">
+
+                <article class="summary-card">
+
+                    <span>
+                        Approved Projects
+                    </span>
+
+                    <strong id="approvedProjectCount">
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <span>
+                        Public Investment
+                    </span>
+
+                    <strong id="totalInvestment">
+                        ₹0
+                    </strong>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <span>
+                        Estimated People Impacted
+                    </span>
+
+                    <strong id="peopleImpacted">
+                        0
+                    </strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="projects-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        Approved Development
+                    </span>
+
+                    <h2>
+                        Public Projects
+                    </h2>
+
+                    <p>
+                        Development proposals approved
+                        through the JanMitra review process.
+                    </p>
+
+                </div>
+
+
+                <div class="project-filters">
+
+                    <label class="search-field" for="projectSearch">
+
+                        <span>
+                            Search
+                        </span>
+
+                        <input id="projectSearch" type="search" placeholder="Search projects or locations"
+                            autocomplete="off">
+
+                    </label>
+
+
+                    <label class="filter-field" for="categoryFilter">
+
+                        <span>
+                            Category
+                        </span>
+
+                        <select id="categoryFilter">
+
+                            <option value="">
+                                All categories
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div id="publicError" class="page-message error-message hidden"></div>
+
+
+            <div id="publicLoading" class="loading-state">
+
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Loading approved projects...
+                </p>
+
+            </div>
+
+
+            <div id="projectList" class="project-list"></div>
+
+
+            <div id="emptyProjects" class="empty-state hidden">
+
+                <h3>
+                    No approved projects found
+                </h3>
+
+                <p>
+                    Approved development proposals
+                    will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="projectModal" class="modal-backdrop hidden">
+
+        <section class="modal-card project-modal-card" role="dialog" aria-modal="true"
+            aria-labelledby="modalProjectTitle">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        Approved Development Project
+                    </span>
+
+                    <h2 id="modalProjectTitle">
+                        Project
+                    </h2>
+
+                </div>
+
+
+                <button id="closeProjectButton" class="icon-button" type="button" aria-label="Close project">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div id="projectDetail" class="project-detail"></div>
+
+        </section>
+
+    </div>
+
+
+    <footer class="public-footer">
+
+        <div class="public-footer-inner">
+
+            <div>
+
+                <strong>
+                    JanMitra
+                </strong>
+
+                <p>
+                    Citizen requests to transparent
+                    development decisions.
+                </p>
+
+            </div>
+
+
+            <span>
+                Public Development Portal
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script type="module" src="../js/public.js"></script>
+
+</body>
+
+</html>

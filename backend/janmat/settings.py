@@ -17,6 +17,7 @@ DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    "100.112.107.29"
 ]
 
 INSTALLED_APPS = [
@@ -29,7 +30,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "accounts",
-    "problems"
+    "problems",
+    "intelligence"
 ]
 
 MIDDLEWARE = [
@@ -121,7 +123,9 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://127.0.0.1:5173",
-    # "http://127.0.0.1:5500",
+    "http://127.0.0.1:5500",
+    "http://100.112.107.29:5500",
+    "http://100.112.107.29:8000"
 ]
 
 

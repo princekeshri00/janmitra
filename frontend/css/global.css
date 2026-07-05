@@ -1,0 +1,312 @@
+:root {
+    --bg: #f4f7f5;
+    --surface: #ffffff;
+    --surface-soft: #eef4f0;
+
+    --text: #15231b;
+    --text-muted: #647269;
+
+    --primary: #176b45;
+    --primary-dark: #0f5134;
+    --primary-soft: #dceee4;
+
+    --border: #dbe4de;
+
+    --danger: #b42318;
+    --danger-soft: #fee4e2;
+
+    --warning: #9a6700;
+    --warning-soft: #fff3cd;
+
+    --success: #157347;
+    --success-soft: #dff3e7;
+
+    --shadow:
+        0 20px 60px rgba(22, 52, 35, 0.08);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+
+    --container: 1280px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--text);
+
+    background: var(--bg);
+
+    line-height: 1.5;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.65;
+}
+
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin-top: 0;
+}
+
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+
+.container {
+    width: min(calc(100% - 40px),
+            var(--container));
+
+    margin-inline: auto;
+}
+
+
+.primary-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 20px;
+
+    border: 0;
+
+    border-radius: var(--radius-sm);
+
+    color: #ffffff;
+
+    background: var(--primary);
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.primary-button:hover {
+    background: var(--primary-dark);
+}
+
+
+.primary-button:active {
+    transform: translateY(1px);
+}
+
+
+.secondary-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+
+    padding: 0 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    color: var(--text);
+
+    background: var(--surface);
+
+    font-weight: 650;
+}
+
+
+.secondary-button:hover {
+    background: var(--surface-soft);
+}
+
+
+.text-button {
+    padding: 0;
+
+    border: 0;
+
+    color: var(--primary);
+
+    background: transparent;
+
+    font-weight: 700;
+}
+
+
+.eyebrow {
+    margin-bottom: 10px;
+
+    color: var(--primary);
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.02em;
+}
+
+
+.status-draft {
+    color: var(--text-muted);
+
+    background: var(--surface-soft);
+}
+
+
+.status-submitted,
+.status-ready-for-ai,
+.status-ai-processing {
+    color: var(--warning);
+
+    background: var(--warning-soft);
+}
+
+
+.status-analyzed,
+.status-grouped {
+    color: #175cd3;
+
+    background: #e8f1ff;
+}
+
+
+.status-approved,
+.status-closed {
+    color: var(--success);
+
+    background: var(--success-soft);
+}
+
+
+.status-rejected {
+    color: var(--danger);
+
+    background: var(--danger-soft);
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+.page-loader {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+
+    color: var(--text-muted);
+
+    font-weight: 650;
+}
+
+
+.empty-state {
+    padding: 60px 30px;
+
+    border: 1px dashed var(--border);
+
+    border-radius: var(--radius-md);
+
+    text-align: center;
+
+    background: var(--surface);
+}
+
+
+.empty-state h3 {
+    margin-bottom: 8px;
+}
+
+
+.empty-state p {
+    margin-bottom: 0;
+
+    color: var(--text-muted);
+}
+
+
+@media (max-width: 700px) {
+    .container {
+        width: min(calc(100% - 28px),
+                var(--container));
+    }
+}
