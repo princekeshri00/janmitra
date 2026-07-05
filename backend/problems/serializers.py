@@ -244,26 +244,9 @@ class MediaAttachSerializer(serializers.Serializer):
         max_length=500,
     )
 
-    resource_type = serializers.CharField(
-        max_length=50,
-    )
-
-    secure_url = serializers.URLField(
-        max_length=1000,
-    )
-
-    mime_type = serializers.CharField(
-        max_length=100,
-        required=False,
-        allow_blank=True,
-    )
-
-    file_size = serializers.IntegerField(
-        min_value=1,
-    )
-
-    original_filename = serializers.CharField(
-        max_length=255,
-        required=False,
-        allow_blank=True,
+    resource_type = serializers.ChoiceField(
+        choices=(
+            ("image", "Image"),
+            ("video", "Video"),
+        ),
     )
